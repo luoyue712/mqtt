@@ -700,6 +700,8 @@ class Client
                 $this->debugDump('Recv PINGRESP package', '<-');
                 break;
             case MQTTConst::CMD_DISCONNECT:
+                $this->debugDump('Recv DISCONNECT package', '<-');
+                $this->close();
                 break;
             default:
                 $this->debugDump('Recv unknow package, cmd: ' . $cmd, '<-');
